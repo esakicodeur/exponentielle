@@ -6,7 +6,7 @@
     </a>
 
     @if ($post->category)
-        <a href="">
+        <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}">
             <p class="ml-5 mt-5 px-1 inline-block bg-black text-white text-sm">{{ $post->category->name }}</p>
         </a>
     @endif

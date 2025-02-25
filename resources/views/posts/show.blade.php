@@ -20,7 +20,7 @@
 
         <div class="flex flex-col items-start mt-5 space-y-5 lg:w-7/12 lg:mt-0 lg:ml-12">
             @if ($post->category)
-                <a href="">
+                <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}">
                     <p class="mt-5 px-3 py-1 bg-black text-white text-sm">{{ $post->category->name }}</p>
                 </a>
             @endif

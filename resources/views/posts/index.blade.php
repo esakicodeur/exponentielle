@@ -31,7 +31,9 @@
         <div class="flex justify-center gap-6 my-10">
             <button class="bg-black text-white py-1 px-4 rounded-sm">All</button>
             @foreach ($categories as $category)
+            <a href="{{ route('posts.byCategory', ['category' => $category]) }}">
                 <button>{{ $category->name }}</button>
+            </a>
             @endforeach
 
         </div>
