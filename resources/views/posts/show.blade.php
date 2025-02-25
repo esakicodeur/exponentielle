@@ -28,7 +28,7 @@
             @if ($post->tags->isNotEmpty())
                 <ul class="flex flex-wrap gap-2">
                     @foreach ($post->tags as $tag)
-                        <li><a href="" class="px-3 py-1 bg-black text-white rounded-full text-xs">{{ $tag->name }}</a></li>
+                        <li><a href="{{ route('posts.byTag', ['tag' => $tag]) }}" class="px-3 py-1 bg-black text-white rounded-full text-xs">{{ $tag->name }}</a></li>
                     @endforeach
                 </ul>
             @endif
