@@ -25,11 +25,13 @@
                 </a>
             @endif
 
-            <ul class="flex flex-wrap gap-2">
-                <li><a href="" class="px-3 py-1 bg-black text-white rounded-full text-xs">Maths</a></li>
-                <li><a href="" class="px-3 py-1 bg-black text-white rounded-full text-xs">Physique</a></li>
-                <li><a href="" class="px-3 py-1 bg-black text-white rounded-full text-xs">Chimie</a></li>
-            </ul>
+            @if ($post->tags->isNotEmpty())
+                <ul class="flex flex-wrap gap-2">
+                    @foreach ($post->tags as $tag)
+                        <li><a href="" class="px-3 py-1 bg-black text-white rounded-full text-xs">{{ $tag->name }}</a></li>
+                    @endforeach
+                </ul>
+            @endif
 
             <p class="text-xl lg:text-2xl text-slate-600">
                 {!! nl2br(e($post->content)) !!}
