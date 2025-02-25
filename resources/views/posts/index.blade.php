@@ -30,13 +30,10 @@
         <!-- Category List -->
         <div class="flex justify-center gap-6 my-10">
             <button class="bg-black text-white py-1 px-4 rounded-sm">All</button>
-            <button>3 eme</button>
-            <button>1 ere A</button>
-            <button>1 ere C</button>
-            <button>1 ere D</button>
-            <button>Tle A</button>
-            <button>Tle C</button>
-            <button>Tle D</button>
+            @foreach ($categories as $category)
+                <button>{{ $category->name }}</button>
+            @endforeach
+
         </div>
         <!-- End of Category List -->
 

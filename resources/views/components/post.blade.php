@@ -5,7 +5,11 @@
         {{-- <img src="{{ $post->thumbnail }}" alt="Miniature" class="border-b border-black w-full max-h-72 object-cover"> --}}
     </a>
 
-    <p class="ml-5 mt-5 px-1 inline-block bg-black text-white text-sm">Terminale C</p>
+    @if ($post->category)
+        <a href="">
+            <p class="ml-5 mt-5 px-1 inline-block bg-black text-white text-sm">{{ $post->category->name }}</p>
+        </a>
+    @endif
 
     <div class="p-5">
         <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900">{{ $post->title }}</h5>

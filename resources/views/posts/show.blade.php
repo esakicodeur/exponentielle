@@ -19,9 +19,11 @@
         <img src="{{ asset('images/blog-1.png') }}" alt="logo" width="1280" height="720" class="border-4 border-white">
 
         <div class="flex flex-col items-start mt-5 space-y-5 lg:w-7/12 lg:mt-0 lg:ml-12">
-            <a href="">
-                <p class="mt-5 px-3 py-1 bg-black text-white text-sm">Terminale C</p>
-            </a>
+            @if ($post->category)
+                <a href="">
+                    <p class="mt-5 px-3 py-1 bg-black text-white text-sm">{{ $post->category->name }}</p>
+                </a>
+            @endif
 
             <ul class="flex flex-wrap gap-2">
                 <li><a href="" class="px-3 py-1 bg-black text-white rounded-full text-xs">Maths</a></li>
