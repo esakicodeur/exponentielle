@@ -17,6 +17,7 @@ class AuthLayout extends AbstractLayout
         public string $submitMessage = 'Soumettre',
         public string $msg = '',
         public string $choix = '',
+        public string $lien = '',
     )
     {
         parent::__construct($title);

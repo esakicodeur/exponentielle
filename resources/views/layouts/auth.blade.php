@@ -16,7 +16,7 @@
     <body class="antialiased h-full bg-gray-50">
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div class="sm:mx-auto sm:w-full sm:max-w-md">
-                <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-grand.svg') }}" alt="logo" class="w-[100px] sm:w-auto mx-auto w-auto"></a>
+                <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-grand.svg') }}" alt="logo" class="w-[100px] sm:w-auto mx-auto"></a>
 
             </div>
 
@@ -35,9 +35,16 @@
 
                     </form>
 
-                    <p class="text-sm text-slate-600 mt-5 flex justify-center">
-                        {{ $msg }} <a href="" class="text-black font-bold ml-3">{{ $choix }}</a>
-                    </p>
+                    @if ($lien === 'login')
+                        <p class="text-sm text-slate-600 mt-5 flex justify-center">
+                            {{ $msg }} <a href="{{ route('register') }}" class="text-black font-bold ml-3">{{ $choix }}</a>
+                        </p>
+                    @else
+                        <p class="text-sm text-slate-600 mt-5 flex justify-center">
+                            {{ $msg }} <a href="{{ route('login') }}" class="text-black font-bold ml-3">{{ $choix }}</a>
+                        </p>
+                    @endif
+
                 </div>
             </div>
         </div>
