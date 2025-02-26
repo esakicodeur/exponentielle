@@ -1,4 +1,4 @@
-<x-auth-layout title="Inscription" :action="route('register')" submitMessage="S'inscrire" message="Avez-vous deja un compte ?" choix="Se connecter !">
+<x-auth-layout title="Inscription" :action="route('register')" submitMessage="S'inscrire" msg="Avez-vous deja un compte ?" choix="Se connecter !">
 
     <x-input name="name" placeholder="Entrez votre nom..."/>
     <x-input name="email" type="email" placeholder="Entrez votre e-mail..."/>

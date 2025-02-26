@@ -15,7 +15,7 @@ class AuthLayout extends AbstractLayout
         public string $title = '',
         public string $action = '',
         public string $submitMessage = 'Soumettre',
-        public string $message = '',
+        public string $msg = '',
         public string $choix = '',
     )
     {

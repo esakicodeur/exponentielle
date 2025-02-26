@@ -23,10 +23,11 @@
             <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[400px]">
                 <div class="bg-white px-6 py-6 shadow sm:rounded-lg sm:px-12">
                     <form action="{{ $action }}" method="POST">
+                        @csrf
 
                         {{ $slot }}
 
-                        <div class="mt-10">
+                        <div class="mt-10 flex justify-center">
                             <button type="submit" class="flex text-xl text-center items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
                                 {{ $submitMessage }}
                             </button>
@@ -34,8 +35,8 @@
 
                     </form>
 
-                    <p class="text-sm text-slate-600 mt-5">
-                        {{ $message }} <a href="" class="text-black font-bold">{{ $choix }}</a>
+                    <p class="text-sm text-slate-600 mt-5 flex justify-center">
+                        {{ $msg }} <a href="" class="text-black font-bold ml-3">{{ $choix }}</a>
                     </p>
                 </div>
             </div>
