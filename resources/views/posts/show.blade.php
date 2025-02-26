@@ -5,7 +5,7 @@
             <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-grand.svg') }}" alt="logo" class="w-[130px] sm:w-auto"></a>
 
             <button class="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
-                S'inscrire
+                Se connecter
                 <x-heroicon-o-arrow-right class="w-4 h-4" />
             </button>
         </div>

@@ -5,19 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request): View
     {
-        $posts = Post::latest()->paginate(10);
-        $categories = Category::all();
+        $posts = Post::query();
+
+        if ($search = $request->search) {
+            $posts->where(fn ( Builder $query) => $query
+                ->where('title', 'LIKE', '%' . $search . '%')
+                ->orWhere('content', 'LIKE', '%' . $search . '%')
+            );
+        }
 
         return view('posts.index', [
-            'posts' => $posts,
-            'categories' => $categories,
+            'posts' => $posts->latest()->paginate(10),
+            'categories' => Category::all(),
         ]);
     }
 
