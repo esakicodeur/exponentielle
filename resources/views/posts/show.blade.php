@@ -1,4 +1,4 @@
-<x-layout :title="$post->title">
+<x-default-layout :title="$post->title">
     <!-- Post Detail -->
     <div class="bg-gray-200 py-5 px-5 md:px-12 lg:px-28">
         <div class="flex justify-between items-center">
@@ -41,4 +41,4 @@
         </div>
     </div>
     <!-- End of Post Detail -->
-</x-layout>
+</x-default-layout>

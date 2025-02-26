@@ -1,14 +1,16 @@
-<x-layout>
+<x-default-layout>
     <!-- Header -->
     <header>
         <div class="py-5 px-5 md:px-12 lg:px-28">
             <div class="flex justify-between items-center">
                 <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-grand.svg') }}" alt="logo" class="w-[130px] sm:w-auto"></a>
 
-                <button class="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
-                    Se connecter
-                    <x-heroicon-o-arrow-right class="w-4 h-4" />
-                </button>
+                <div>
+                    <button class="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
+                        Se connecter
+                        <x-heroicon-o-arrow-right class="w-4 h-4" />
+                    </button>
+                </div>
             </div>
 
             <div class="text-center my-8">
@@ -16,7 +18,7 @@
                 <p class="mt-10 max-w-[750px] mx-auto text-2xl sm:text-xl"> &quot; Lire ton cours avant de faire les exercices te delivre de tous les demons du faxage. &quot; </p>
 
                 <form action="{{ route('posts.index') }}" class="flex justify-between max-w-[500px] scale-75 sm:scale-100 mx-auto mt-10 border border-black shadow-[-7px_7px_0px_#000000]">
-                    <input type='search' name="search" value="{{ request()->search }}" placeholder="Entrer votre recherche..." class="pl-4 outline-none" >
+                    <input type='search' name="search" value="{{ request()->search }}" placeholder="Entrez votre recherche..." class="pl-4 outline-none" >
 
                     <button type="submit" class="border-l border-black py-4 px-4 sm:px-8 active:bg-gray-600 active:text-white">Rechercher</button>
                 </form>
@@ -54,4 +56,4 @@
         </div>
     </div>
     <!-- End of Content -->
-</x-layout>
+</x-default-layout>
