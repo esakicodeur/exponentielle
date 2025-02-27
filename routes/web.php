@@ -10,6 +10,7 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->mi
 Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
+Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
