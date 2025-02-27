@@ -4,10 +4,30 @@
         <div class="flex justify-between items-center">
             <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-grand.svg') }}" alt="logo" class="w-[130px] sm:w-auto"></a>
 
-            <button class="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
-                Se connecter
-                <x-heroicon-o-arrow-right class="w-4 h-4" />
-            </button>
+            @auth
+                <div>
+                    <a href="{{ route('home') }}" class="block px-4 py-2 text-sm font-semibold text-black">
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+
+                        <button type="submit" class="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
+                            Se déconnecter
+                        </button>
+                    </form>
+                </div>
+            @else
+                <div>
+                    <a href="{{ route('login') }}">
+                        <button class="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
+                            Se connecter
+                            <x-heroicon-o-arrow-right class="w-4 h-4" />
+                        </button>
+                    </a>
+                </div>
+            @endauth
         </div>
 
         <div class="text-center my-24">
@@ -18,7 +38,7 @@
     <div class="mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10">
         <img src="{{ asset('images/blog-1.png') }}" alt="logo" width="1280" height="720" class="border-4 border-white">
 
-        <div class="flex flex-col items-start mt-5 space-y-5 lg:w-7/12 lg:mt-0 lg:ml-12">
+        <div class="flex flex-col items-start mt-5 space-y-5 lg:w-7/12 lg:mt-0 lg:ml-12 mb-5">
             @if ($post->category)
                 <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}">
                     <p class="mt-5 px-3 py-1 bg-black text-white text-sm">{{ $post->category->name }}</p>
@@ -38,7 +58,52 @@
             </p>
 
             <time class="text-xs" datetime="{{ $post->created_at }}">{{ $post->created_at->format('d/m/Y H:i:s') }}</time>
+
+        </div>
+        <!-- Comment -->
+        @auth
+            <form action="{{ route('posts.comment', ['post' => $post]) }}" method="POST">
+                @csrf
+
+                <div class="max-w-[500px] scale-75 sm:scale-100 mt-10 border border-black shadow-[-7px_7px_0px_#000000]">
+                    <textarea name="comment" class="p-4 outline-none w-full" placeholder="Entrez votre commentaire ici !!!"></textarea>
+                </div>
+
+                @error('comment')
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+
+                <div class="my-5">
+                    <button type="submit" class="flex text-sm text-center items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
+                        Poster
+                    </button>
+                </div>
+            </form>
+        @endauth
+        <!-- End of Comment -->
+
+        <div class="space-y-8">
+            @foreach ($post->comments as $comment)
+                <div class="flex bg-slate-50 p-6 rounded-lg">
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full" src="{{ asset('images/logo-e-petit.svg') }}" alt="Image de profil de {{ $comment->user->name }}">
+
+                    <div class="ml-4 flex flex-col">
+                        <div class="flex flex-col sm:flex-row sm:items-center">
+                            <h2 class="font-bold text-slate-900 text-2xl">
+                                {{ $comment->user->name }}
+                            </h2>
+                            <time class="text-xs mt-2 sm:mt-0 sm:ml-4 text-slate-400" datetime="{{ $post->created_at }}">{{ $post->created_at->format('d/m/Y H:i:s') }}</time>
+                        </div>
+
+                        <p class="mt-4 sm:leading-loose text-slate-800">
+                            {!! nl2br(e($comment->content)) !!}
+                        </p>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
     <!-- End of Post Detail -->
+
+
 </x-default-layout>
