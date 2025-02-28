@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\PostsController;
+use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->middleware('guest')->name('register');
@@ -18,8 +19,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 Route::patch('/home', [HomeController::class, 'updatePassword']);
 
-Route::get('/admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.dashboard');
-Route::resource('/admin/posts', PostsController::class)->except('show')->middleware('auth')->names('admin.posts');
+Route::get('/admin', [AdminController::class, 'index'])->middleware('admin')->name('admin.dashboard');
+Route::resource('/admin/posts', PostsController::class)->except('show')->middleware('admin')->names('admin.posts');
 
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::get('/categories/{category}', [PostController::class, 'postsByCategory'])->name('posts.byCategory');

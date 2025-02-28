@@ -12,6 +12,9 @@
                         <p><a href="{{ route('home') }}" class="block px-4 py-2 text-sm font-semibold text-black">
                             {{ Auth::user()->name }}
                         </a></p>
+                        @if (Auth::user()->role->value === 'admin')
+                            <x-heroicon-s-check-badge class="w-4 h-4 text-green-500" />
+                        @endif
                     </div>
                     <div class="mt-5 flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
                         <p>Posts</p>
@@ -49,7 +52,7 @@
                         <h1 class="text-xl font-semibold leading-6 text-gray-900">Posts</h1>
                         <p>Interface d'administration du blog.</p>
                     </div>
-                    <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+                    <div class="mt-4 sm:mt-0 sm:flex-none">
                         <a href="{{ route('admin.posts.create') }}">
                             <button type="submit" class="mt-8 w-40 h-12 bg-black text-white">CREER UN POST</button>
                         </a>
@@ -57,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="py-12">
+            <div class="pb-12 pt-5">
                 <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
                         <table class="w-full divide-y divide-gray-200">
