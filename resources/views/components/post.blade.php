@@ -1,8 +1,7 @@
 <!-- Post Item -->
 <div class="max-w-[330px] sm:max-w-[300px] bg-white border border-black hover:shadow-[-7px_7px_0px_#000000]">
     <a href="{{ route('posts.show', ['post' => $post]) }}">
-        <img src="{{ asset('images/blog-2.png') }}" alt="Miniature" class="border-b border-black w-full max-h-72 object-cover">
-        {{-- <img src="{{ $post->thumbnail }}" alt="Miniature" class="border-b border-black w-full max-h-72 object-cover"> --}}
+        <img src="{{ str_starts_with($post->thumbnail, 'http') ? $post->thumbnail : asset('storage/' . $post->thumbnail) }}" alt="Miniature" class="border-b border-black w-full max-h-72 object-cover">
     </a>
 
     @if ($post->category)

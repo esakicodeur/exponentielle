@@ -43,7 +43,6 @@
 
             <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data" class="py-5 px-5 sm:pt-12 sm:pl-16">
                 @csrf
-                @method('PATCH')
 
                 <h1 class="text-2xl font-bold mt-4">Creer un post</h1>
                 <p class="mt-1 text-sm leading-6 text-gray-900">Revelons au monde nos talents de scientifique.</p>
