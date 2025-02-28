@@ -2,10 +2,10 @@
     <div class="flex">
         <div class="flex flex-col bg-slate-100">
             <div class="px-2 sm:pl-14 py-2 border border-black">
-                <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-petit.svg') }}" alt="logo"></a>
+                <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-moyen.svg') }}" alt="logo"></a>
             </div>
 
-            <div class="w-28 sm:w-80 h-[100vh] relative py-12 border border-black">
+            <div class="w-28 sm:w-80 h-[100%] relative py-12 border border-black">
                 <div class="w-[50%] sm:w-[80%] absolute right-0">
                     <div class="flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
                         <img class="w-5 h-5 sm:w-5 sm:h-5 object-cover rounded-full" src="{{ asset('images/logo-e-petit.svg') }}" alt="Image de profil de {{ Auth::user()->name }}">
@@ -49,8 +49,8 @@
             <div class="px-4 sm:px-6 lg:px-8 mt-5">
                 <div class="flex flex-col">
                     <div class="sm:flex-auto">
-                        <h1 class="text-xl font-semibold leading-6 text-gray-900">Posts</h1>
-                        <p>Interface d'administration du blog.</p>
+                        <h1 class="text-2xl font-bold mt-4">Posts</h1>
+                        <p class="mt-1 text-sm leading-6 text-gray-900">Interface d'administration du blog.</p>
                     </div>
                     <div class="mt-4 sm:mt-0 sm:flex-none">
                         <a href="{{ route('admin.posts.create') }}">
