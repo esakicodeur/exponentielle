@@ -36,7 +36,13 @@
     </div>
 
     <div class="mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10">
-        <img src="{{ asset('images/blog-1.png') }}" alt="logo" width="1280" height="720" class="border-4 border-white">
+        <img src="{{ str_starts_with($post->thumbnail, 'http') ? $post->thumbnail : asset('storage/' . $post->thumbnail) }}" alt="Miniature"  width="1280" height="720" class="border-4 border-white">
+
+        @foreach ($postImages as $postImage)
+            <div class="flex bg-slate-50 p-6 rounded-lg">
+                <img class="mt-2 mx-auto w-full" src="{{ asset($postImage->image) }}" alt="Images du post">
+            </div>
+        @endforeach
 
         <div class="flex flex-col items-start mt-5 space-y-5 lg:w-7/12 lg:mt-0 lg:ml-12 mb-5">
             @if ($post->category)

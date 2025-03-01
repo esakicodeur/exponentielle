@@ -75,7 +75,7 @@
                                         Titre
                                     </th>
                                     <th class="px-2 py-3 text-xs tracking-wider text-left uppercase">
-                                        Date
+                                        Images
                                     </th>
                                     <th class="px-2 py-3 text-xs tracking-wider text-left uppercase">
                                         Actions
@@ -97,7 +97,7 @@
                                             </a>
                                         </td>
                                         <td class="px-2 py-4 whitespace-nowrap">
-                                            {{ $post->created_at }}
+                                            <a href="{{ url('admin/posts/' . $post->id . '/upload') }}" class="w-20 h-10 px-5 py-2 bg-black text-white">Images</a>
                                         </td>
                                         <td class="px-2 py-4 text-sm text-gray-500 whitespace-nowrap">
                                             <div class="flex justify-start space-x-1">

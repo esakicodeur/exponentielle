@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PostImageController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
@@ -21,6 +22,9 @@ Route::patch('/home', [HomeController::class, 'updatePassword']);
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware('admin')->name('admin.dashboard');
 Route::resource('/admin/posts', PostsController::class)->except('show')->middleware('admin')->names('admin.posts');
+Route::get('admin/posts/{postId}/upload', [PostImageController::class, 'index'])->middleware('admin')->name('admin.images.upload');
+Route::post('admin/posts/{postId}/upload',[PostImageController::class, 'store'])->middleware('admin')->name('admin.images.store');
+Route::get('post-image/{postImageId}/delete',[PostImageController::class, 'destroy'])->middleware('admin')->name('admin.images.destroy');
 
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::get('/categories/{category}', [PostController::class, 'postsByCategory'])->name('posts.byCategory');

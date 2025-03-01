@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\PostImage;
 use App\Models\Tag;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
@@ -53,7 +54,10 @@ class PostController extends Controller
 
     public function show(Post $post): View
     {
+        $postImages = PostImage::where('post_id', $post->id)->get();
+
         return view('posts.show', [
+            'postImages' => $postImages,
             'post' => $post,
         ]);
     }
