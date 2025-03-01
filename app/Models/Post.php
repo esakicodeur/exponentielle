@@ -24,6 +24,11 @@ class Post extends Model
         return 'slug';
     }
 
+    public function exists(): bool
+    {
+        return (bool) $this->id;
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

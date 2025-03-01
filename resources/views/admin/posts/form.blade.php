@@ -1,4 +1,4 @@
-<x-default-layout title="Creation d'un post">
+<x-default-layout :title="$post->exists() ? 'Modifier un post' : 'Creer un post'">
     <div class="flex">
         <div class="flex flex-col bg-slate-100">
             <div class="px-2 sm:pl-14 py-2 border border-black">
@@ -12,16 +12,21 @@
                         <p><a href="{{ route('home') }}" class="block px-4 py-2 text-sm font-semibold text-black">
                             {{ Auth::user()->name }}
                         </a></p>
-
                         @if (Auth::user()->role->value === 'admin')
                             <x-heroicon-s-check-badge class="w-4 h-4 text-green-500" />
                         @endif
                     </div>
                     <div class="mt-5 flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
-                        <p>Add Blogs</p>
+                        <p>Posts</p>
                     </div>
                     <div class="mt-5 flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
-                        <p>Add Blogs</p>
+                        <p>Categories</p>
+                    </div>
+                    <div class="mt-5 flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
+                        <p>Tags</p>
+                    </div>
+                    <div class="mt-5 flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
+                        <p>Souscriptions</p>
                     </div>
 
                     <form action="{{ route('logout') }}" method="POST">
@@ -41,33 +46,41 @@
                 <img class="w-5 h-5 sm:w-5 sm:h-5 object-cover rounded-full" src="{{ asset('images/logo-e-petit.svg') }}" alt="Image de profil de {{ Auth::user()->name }}">
             </div>
 
-            <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data" class="py-5 px-5 sm:pt-12 sm:pl-16">
+            <form action="{{ $post->exists() ? route('admin.posts.update', ['post' => $post]) : route('admin.posts.store') }}" method="POST" enctype="multipart/form-data" class="py-5 px-5 sm:pt-12 sm:pl-16">
                 @csrf
 
-                <h1 class="text-2xl font-bold mt-4">Creer un post</h1>
+                @if ($post->exists())
+                    @method('PATCH')
+                @endif
+
+                <h1 class="text-2xl font-bold mt-4">
+                    {{ $post->exists() ? 'Modifier "' . $post->title . '"' : 'Creer un post' }}
+                </h1>
                 <p class="mt-1 text-sm leading-6 text-gray-900">Revelons au monde nos talents de scientifique.</p>
 
                 <div class="mt-10 space-y-3 md:w-2/3">
 
-                    <x-admin.input name="title" label="Titre" />
+                    <x-admin.input name="title" label="Titre" :value="$post->title" />
 
-                    <x-admin.input name="slug" label="Slug" help="Laisser vide pour un slug auto. Si une valeur est renseignee, elle sera slugifiee avant d'etre soumise a validation." />
+                    <x-admin.input name="slug" label="Slug" :value="$post->slug" help="Laisser vide pour un slug auto. Si une valeur est renseignee, elle sera slugifiee avant d'etre soumise a validation." />
 
                     {{-- textarea content --}}
-                    <x-admin.textarea name="content" label="Contenu du post"></x-admin.textarea>
+                    <x-admin.textarea name="content" label="Contenu du post">{{ $post->content }}</x-admin.textarea>
 
                     {{-- input file thumbnail --}}
-                    <x-admin.input name="thumbnail" type="file" label="Image de couverture" />
+                    <x-admin.input name="thumbnail" type="file" :value="$post->thumbnail" label="Image de couverture" />
 
                     {{-- Select category_id --}}
-                    <x-admin.select name="category_id" label="Categorie" :list="$categories" />
+                    <x-admin.select name="category_id" label="Categorie" :value="$post->category_id" :list="$categories" />
 
                     {{-- select multiple tag ids --}}
-                    <x-admin.select name="tags_id" label="Etiquettes" :list="$tags" multiple />
+                    <x-admin.select name="tag_ids" label="Etiquettes" :value="$post->tags" :list="$tags" multiple />
                 </div>
 
                 <div class="flex items-center justify-end gap-x-6">
-                    <button type="submit" class="mt-8 w-40 h-12 bg-black text-white">PUBLIER</button>
+                    <button type="submit" class="mt-8 w-40 h-12 bg-black text-white">
+                        {{ $post->exists() ? 'Mettre a jour' : 'Publier' }}
+                    </button>
                 </div>
             </form>
         </div>
