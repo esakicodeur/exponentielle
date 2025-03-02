@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\PostImageController;
 use App\Http\Controllers\Admin\TagsController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
@@ -36,7 +37,8 @@ Route::get('post-image/{postImageId}/delete',[PostImageController::class, 'destr
 Route::resource('/admin/categories', CategoriesController::class)->except('show')->middleware('admin')->names('admin.categories');
 // Tags
 Route::resource('/admin/tags', TagsController::class)->except('show')->middleware('admin')->names('admin.tags');
-
+// Users
+Route::get('admin/users', [UsersController::class, 'index'])->middleware('admin')->name('admin.users.index');;
 
 // Front Office
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
