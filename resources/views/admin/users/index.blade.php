@@ -1,11 +1,16 @@
 <x-default-layout title="Gestion des users">
     <div class="flex">
-        @include('layouts.partials.sidebar')
+
+        <x-partials.sidebar />
 
         <div class="flex flex-col w-full">
             <div class="flex items-center justify-between w-full py-3 max-h-[60px] px-12 border-b border-black">
                 <h3 class="font-medium">Administration</h3>
                 <img class="w-5 h-5 sm:w-5 sm:h-5 object-cover rounded-full" src="{{ asset('images/logo-e-petit.svg') }}" alt="Image de profil de {{ Auth::user()->name }}">
+            </div>
+
+            <div class="mx-auto w-full sm:px-6 l:px-8 mt-4">
+                <x-ui.alerts />
             </div>
 
             <div class="px-4 sm:px-6 lg:px-8 mt-5">

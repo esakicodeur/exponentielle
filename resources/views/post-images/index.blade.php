@@ -1,6 +1,7 @@
 <x-default-layout title="Uploader les images du post">
     <div class="flex">
-        @include('layouts.partials.sidebar')
+
+        |<x-partials.sidebar />
 
         <div class="flex flex-col w-full">
             <div class="flex items-center justify-between w-full py-3 max-h-[60px] px-12 border-b border-black">
@@ -48,7 +49,7 @@
             <div class="flex flex-wrap justify-around mb-16 xl:mx-24">
                 @foreach ($postImages as $postImage)
                     <div>
-                        <a href="{{ url('post-image/' . $postImage->id . '/delete') }}" class="relative top-0 right-0"><x-heroicon-c-x-circle class="w-4 h-4 text-red-600" /></a>
+                        <a href="{{ url('admin/post-image/' . $postImage->id . '/delete') }}" class="relative top-0 right-0"><x-heroicon-c-x-circle class="w-4 h-4 text-red-600" /></a>
 
                         <img class="mt-2 max-w-30 max-h-20" src="{{ asset($postImage->image) }}" alt="Images du post">
                     </div>

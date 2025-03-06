@@ -1,6 +1,7 @@
 <x-default-layout :title="$category->exists() ? 'Modifier une categorie' : 'Creer une categorie'">
     <div class="flex">
-        @include('layouts.partials.sidebar')
+
+        <x-partials.sidebar />
 
         <div class="flex flex-col w-full">
             <div class="flex items-center justify-between w-full py-3 max-h-[60px] px-12 border-b border-black">

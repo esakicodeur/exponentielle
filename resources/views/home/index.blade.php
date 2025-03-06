@@ -1,11 +1,16 @@
 <x-default-layout title="Mon compte">
     <div class="flex">
-        @include('layouts.partials.sidebar')
+
+        <x-partials.sidebar />
 
         <div class="flex flex-col w-full">
             <div class="flex items-center justify-between w-full py-3 max-h-[60px] px-12 border-b border-black">
                 <h3 class="font-medium">Mon compte</h3>
                 <img class="w-5 h-5 sm:w-5 sm:h-5 object-cover rounded-full" src="{{ asset('images/logo-e-petit.svg') }}" alt="Image de profil de {{ Auth::user()->name }}">
+            </div>
+
+            <div class="mx-auto w-full sm:px-6 l:px-8 mt-4">
+                <x-ui.alerts />
             </div>
 
             <form action="{{ route('home') }}" method="POST" class="pt-5 px-5 sm:pt-12 sm:pl-16">

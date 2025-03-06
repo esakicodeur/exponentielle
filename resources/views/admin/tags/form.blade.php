@@ -1,6 +1,7 @@
 <x-default-layout :title="$tag->exists() ? 'Modifier un tag' : 'Creer un tag'">
     <div class="flex">
-        @include('layouts.partials.sidebar')
+
+        <x-partials.sidebar />
 
         <div class="flex flex-col w-full">
             <div class="flex items-center justify-between w-full py-3 max-h-[60px] px-12 border-b border-black">

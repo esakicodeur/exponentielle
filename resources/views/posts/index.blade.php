@@ -3,9 +3,9 @@
     <header>
         <div class="py-5 px-5 md:px-12 lg:px-28">
 
-            @include('layouts.partials.nav')
+            <x-partials.nav />
 
-            @include('layouts.partials.hero')
+            <x-partials.hero />
         </div>
     </header>
     <!-- End of Header -->
@@ -41,6 +41,6 @@
     <!-- End of Content -->
 
     <!-- Footer -->
-    @include('layouts.partials.footer')
+    <x-partials.footer />
     <!-- End of Footer -->
 </x-default-layout>
