@@ -2,7 +2,7 @@
     <!-- Post Detail -->
     <div class="bg-gray-200 py-5 px-5 md:px-12 lg:px-28">
 
-        @include('layouts.partials.nav')
+        <x-partials.nav />
 
         <div class="text-center my-24">
             <h1 class="text-2xl sm:text-5xl font-semibold max-w-[700px] mx-auto">{{ $post->title }}</h1>

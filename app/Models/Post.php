@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DragonCode\Contracts\Http\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -50,6 +51,5 @@ class Post extends Model
             : static::query()->where('id', 'like', '%' . $search . '%')
             ->orWhere('title', 'like', '%' . $search . '%')
             ->orWhere('content', 'like', '%' . $search . '%');
-
     }
 }

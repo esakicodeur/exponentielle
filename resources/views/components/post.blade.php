@@ -6,18 +6,18 @@
 
     @if ($post->category)
         <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}">
-            <p class="ml-5 mt-5 px-1 inline-block bg-black text-white text-sm">{{ $post->category->name }}</p>
+            <p class="ml-2 px-1 inline-block bg-black text-white text-sm">{{ $post->category->name }}</p>
         </a>
     @endif
 
-    <div class="p-5">
-        <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900">{{ $post->title }}</h5>
+    <div class="p-2">
+        <h5 class="text-lg font-medium tracking-tight text-gray-900">{{ $post->title }}</h5>
 
-        <p class="mb-3 text-sm tracking-tight text-gray-700">{{ $post->excerpt }}</p>
+        {{-- <p class="mb-3 text-sm tracking-tight text-gray-700">{{ $post->excerpt }}</p>
 
         <a href="{{ route('posts.show', ['post' => $post]) }}" class="inline-flex items-center py-2 font-semibold text-center">
             Voir <x-heroicon-o-arrow-right class="w-4 h-4 ml-2" />
-        </a>
+        </a> --}}
     </div>
 </div>
 <!-- End of Post Item -->
