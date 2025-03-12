@@ -43,4 +43,13 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class)->latest();
     }
+
+    public static function searchPost($search)
+    {
+        return empty($search) ? static::query()
+            : static::query()->where('id', 'like', '%' . $search . '%')
+            ->orWhere('title', 'like', '%' . $search . '%')
+            ->orWhere('content', 'like', '%' . $search . '%');
+
+    }
 }

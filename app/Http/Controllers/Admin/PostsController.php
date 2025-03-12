@@ -20,9 +20,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('admin.posts.index', [
-            'posts' => Post::without('category', 'tags')->latest()->get(),
-        ]);
+        return view('admin.posts.index');
     }
 
     /**

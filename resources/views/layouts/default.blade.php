@@ -6,10 +6,12 @@
     <body>
 
         <!-- Blog Content -->
-        <main>
+        <main class="bg-gray-50">
             {{ $slot }}
         </main>
         <!-- End of Content List -->
 
+        {{-- Livewire scripts --}}
+        @livewireScripts
     </body>
 </html>
