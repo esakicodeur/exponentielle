@@ -19,12 +19,20 @@
         </div>
     </div>
 
+    <div class="flex justify-center items-center mt-10 mb-10">
+        <div wire:loading>
+            <div style="border-top-color: transparent;" class="w-16 h-16 border-4 border-black border-solid rounded-full animate-spin"></div>
+        </div>
+    </div>
+
     <div class="flex flex-wrap justify-around gap-1 gap-y-10 mb-16 xl:mx-24">
-        @forelse ($posts as $post)
-            <x-post :$post />
-        @empty
-            <p class="text-xl lg:text-2xl text-slate-600">Aucun resultat.</p>
-        @endforelse
+        @if (count($posts) > 0)
+            @forelse ($posts as $post)
+                <x-post :$post />
+            @empty
+                <p class="text-xl lg:text-2xl text-slate-600">Aucun resultat.</p>
+            @endforelse
+        @endif
     </div>
 
     <div class="p-2 bg-indigo-300">

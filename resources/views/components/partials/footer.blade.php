@@ -1,31 +1,42 @@
 <footer>
-    <div class="flex flex-wrap justify-around bg-black py-5 items-center mt-10 px-5">
-        <div>
-            <img src="{{ asset('images/logo-grand-blanc.svg') }}" alt="logo" class="w-[130px] sm:w-auto">
+    <div class="container py-11">
+        <div class="flex flex-wrap p-5 justify-between items-center">
+            {{-- Company info section --}}
+            <div class="space-y-4 font-semibold">
+                <div class="flex items-center space-x-3">
+                    <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-grand.svg') }}" alt="logo" class="w-[130px] sm:w-auto"></a>
+                </div>
+                <p>Greater Noida, Ultra Pradesh, India</p>
+                <p>&copy; 2025 exponentielle tous droits reserves.</p>
+            </div>
+            {{-- Footer Link --}}
+            <div class="space-y-4">
+                <h1 class="text-xl font-semibold">A propos</h1>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Designer</a></li>
+                    <li><a href="#">Craftmanship</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h1 class="text-xl font-semibold">Support</h1>
+                <ul>
+                    <li><a href="#">FAQ's</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Care Guide</a></li>
+                    <li><a href="#">Guaranty</a></li>
+                </ul>
+            </div>
+            {{-- Contact section --}}
+            <div class="space-y-4">
+                <h1 class="text-xl font-semibold">Contact us</h1>
+                <ul class="text-base font-semibold space-y-4">
+                    <li class="flex items-center space-x-3"><x-heroicon-s-phone class="w-6 h-6" /><a href="#">+237 654 188 685</a></li>
+                    <li class="flex items-center space-x-3"><x-heroicon-s-envelope class="w-6 h-6" /><a href="mailto:apachecordovax@gmail.com">Email</a></li>
+                </ul>
+            </div>
         </div>
-
-        <div class="max-w-[400px]">
-            <p class="text-sm text-white">
-                Quos incidunt suscipit similique accusantium fuga aspernatur sequi atque tempore blanditiis sit veritatis repellat, voluptatem, magnam fugit, architecto delectus magni alias debitis.
-            </p>
-        </div>
-
-        <div class="max-w-[400px]">
-            <p class="text-sm text-white">
-                Quos incidunt suscipit similique accusantium fuga aspernatur sequi atque tempore blanditiis sit veritatis repellat, voluptatem, magnam fugit, architecto delectus magni alias debitis.
-            </p>
-        </div>
-    </div>
-
-    <div class="flex justify-center bg-black py-5">
-        <form action="" class="flex justify-between max-w-[200px] scale-75 sm:scale-100 mx-auto mt-5 border border-black shadow-[-7px_7px_0px_#FFFFFF]">
-            <input type="email" placeholder="Entrer votre email..." class="pl-4 outline-none" >
-
-            <button type="submit" class="border-l border-black bg-white text-black py-4 px-4 sm:px-8 active:bg-gray-200 active:text-white">Souscrire</button>
-        </form>
-    </div>
-
-    <div class="flex justify-center bg-black py-5">
-        <p class="text-sm text-white">Tous droits reserves. Copyright @exponentielle</p>
+        <p class="border-t-2 text-center text-sm font-semibold boder-t-2 pt-5 mt-5">&copy; 2025 exponentielle tous droits reserves.</p>
     </div>
 </footer>

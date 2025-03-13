@@ -17,6 +17,6 @@
     <!-- End of Content -->
 
     <!-- Footer -->
-    {{-- <x-partials.footer /> --}}
+    <x-partials.footer />
     <!-- End of Footer -->
 </x-default-layout>
