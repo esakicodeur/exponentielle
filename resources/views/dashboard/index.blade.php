@@ -27,7 +27,7 @@
                 <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[4px] border-[#f08faf] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
                     <div>
                         <div class="text-2xl font-semibold mb-1">{{ $categories->count() }}</div>
-                        <div class="text-sm font-medium text-gray-400">Categories</div>
+                        <div class="text-sm font-medium text-gray-400">Catégories</div>
                     </div>
                 </div>
 

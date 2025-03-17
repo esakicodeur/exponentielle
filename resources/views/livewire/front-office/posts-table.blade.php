@@ -3,7 +3,7 @@
         {{-- Order By Matiere --}}
         <div class="relative w-1/2 lg:w-1/2 sm:w-1/2 md:w-1/2 xl:w-1/2 xs:w-1/2">
             <select wire:model.live="matiere_id" wire:change.live='matiere_id' class="relative w-full px-3 py-3 pl-10 text-sm text-gray-700 placeholder-gray-400 bg-gray-100 border-none rounded outline-none focus:outline-none focus:shadow-outline focus:ring-0 focus:bg-indigo-100">
-                <option value="id">Selectionnez une matiere</option>
+                <option value="id">Sélectionnez une matière</option>
                 @foreach ($matieres as $matiere)
                     <option value="{{ $matiere->id }}">{{ $matiere->name }}</option>
                 @endforeach
@@ -13,7 +13,7 @@
         {{-- Order By Category --}}
         <div class="relative w-1/2 lg:w-1/2 sm:w-1/2 md:w-1/2 xl:w-1/2 xs:w-1/2">
             <select wire:model.live="category_id" wire:change.live='category_id' class="relative w-full px-3 py-3 pl-10 text-sm text-gray-700 placeholder-gray-400 bg-gray-100 border-none rounded outline-none focus:outline-none focus:shadow-outline focus:ring-0 focus:bg-indigo-100">
-                <option value="id">Selectionnez une classe</option>
+                <option value="id">Sélectionnez une classe</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
@@ -40,7 +40,7 @@
             @forelse ($posts as $post)
                 <x-post :$post />
             @empty
-                <p class="text-xl lg:text-2xl text-slate-600">Aucun resultat.</p>
+                <p class="text-xl lg:text-2xl text-slate-600">Aucun résultat.</p>
             @endforelse
         @endif
     </div>

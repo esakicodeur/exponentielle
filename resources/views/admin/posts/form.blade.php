@@ -1,4 +1,4 @@
-<x-default-layout :title="$post->exists() ? 'Modifier un post' : 'Creer un post'">
+<x-default-layout :title="$post->exists() ? 'Modifier un post' : 'Créer un post'">
     <div class="flex">
 
         <x-partials.sidebar />
@@ -17,9 +17,9 @@
                 @endif
 
                 <h1 class="text-2xl font-bold mt-4">
-                    {{ $post->exists() ? 'Modifier "' . $post->title . '"' : 'Creer un post' }}
+                    {{ $post->exists() ? 'Modifier "' . $post->title . '"' : 'Créer un post' }}
                 </h1>
-                <p class="mt-1 text-sm leading-6 text-gray-900">Revelons au monde nos talents de scientifique.</p>
+                <p class="mt-1 text-sm leading-6 text-gray-900">Révélons au monde nos talents de scientifique.</p>
 
                 <div class="mt-10 space-y-3 md:w-2/3">
 
@@ -45,7 +45,7 @@
 
                 <div class="flex items-center justify-end gap-x-6">
                     <button type="submit" class="mt-8 w-40 h-12 bg-black text-white">
-                        {{ $post->exists() ? 'Mettre a jour' : 'Publier' }}
+                        {{ $post->exists() ? 'Mettre à jour' : 'Publier' }}
                     </button>
                 </div>
             </form>

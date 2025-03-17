@@ -39,6 +39,6 @@
                 </ul>
             </div> --}}
         </div>
-        <p class="border-t-2 text-center text-sm font-semibold boder-t-2 pt-5 mt-5">&copy; 2025 exponentielle tous droits reserves.</p>
+        <p class="border-t-2 text-center text-sm font-semibold boder-t-2 pt-5 mt-5">&copy; 2025 exponentielle tous droits réservés.</p>
     </div>
 </footer>

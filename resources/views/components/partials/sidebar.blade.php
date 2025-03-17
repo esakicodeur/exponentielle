@@ -28,7 +28,7 @@
             </a>
             <a href="{{ route('admin.categories.index') }}">
                 <div class="mt-5 {{ set_active_route('admin.categories.index') }} flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
-                    <p>Categories</p>
+                    <p>Catégories</p>
                 </div>
             </a>
             <a href="{{ route('admin.tags.index') }}">
@@ -39,11 +39,6 @@
             <a href="{{ route('admin.users.index') }}">
                 <div class="mt-5 {{ set_active_route('admin.users.index') }} flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
                     <p>Utilisateurs</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="mt-5 flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
-                    <p>Souscriptions</p>
                 </div>
             </a>
             @endif

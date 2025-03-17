@@ -1,4 +1,4 @@
-<x-default-layout :title="$category->exists() ? 'Modifier une categorie' : 'Creer une categorie'">
+<x-default-layout :title="$category->exists() ? 'Modifier une catégorie' : 'Créer une catégorie'">
     <div class="flex">
 
         <x-partials.sidebar />
@@ -17,9 +17,9 @@
                 @endif
 
                 <h1 class="text-2xl font-bold mt-4">
-                    {{ $category->exists() ? 'Modifier "' . $category->name . '"' : 'Creer une categorie' }}
+                    {{ $category->exists() ? 'Modifier "' . $category->name . '"' : 'Créer une catégorie' }}
                 </h1>
-                <p class="mt-1 text-sm leading-6 text-gray-900">Revelons au monde nos talents de scientifique.</p>
+                <p class="mt-1 text-sm leading-6 text-gray-900">Révélons au monde nos talents de scientifique.</p>
 
                 <div class="mt-10 space-y-3 md:w-2/3">
 
@@ -30,7 +30,7 @@
 
                 <div class="flex items-center justify-end gap-x-6">
                     <button type="submit" class="mt-8 w-40 h-12 bg-black text-white">
-                        {{ $category->exists() ? 'Mettre a jour' : 'Publier' }}
+                        {{ $category->exists() ? 'Mettre à jour' : 'Publier' }}
                     </button>
                 </div>
             </form>
