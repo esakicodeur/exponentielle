@@ -99,5 +99,7 @@
     </div>
     <!-- End of Post Detail -->
 
-
+    <!-- Footer -->
+    <x-partials.footer />
+    <!-- End of Footer -->
 </x-default-layout>
