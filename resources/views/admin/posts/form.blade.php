@@ -36,6 +36,9 @@
                     {{-- Select category_id --}}
                     <x-admin.select name="category_id" label="Categorie" :value="$post->category_id" :list="$categories" />
 
+                    {{-- Select matiere_id --}}
+                    <x-admin.select name="matiere_id" label="Matiere" :value="$post->matiere_id" :list="$matieres" />
+
                     {{-- select multiple tag ids --}}
                     <x-admin.select name="tag_ids" label="Etiquettes" :value="$post->tags" :list="$tags" multiple />
                 </div>

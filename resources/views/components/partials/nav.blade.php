@@ -1,11 +1,11 @@
 <div class="flex justify-between items-center">
     <a href="{{ route('posts.index') }}"><img src="{{ asset('images/logo-grand.svg') }}" alt="logo" class="w-[130px] sm:w-auto"></a>
 
-    <div class="hidden md:block">
+    {{-- <div class="hidden md:block">
         <a href="" class="mx-4 text-sm font-semibold">A propos</a>
         <a href="" class="mx-4 text-sm font-semibold">Services</a>
         <a href="" class="mx-4 text-sm font-semibold">Contact</a>
-    </div>
+    </div> --}}
 
     @auth
         <div>

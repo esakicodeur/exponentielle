@@ -29,6 +29,7 @@ class PostRequest extends FormRequest
             'content' => ['required', 'string', 'min:10'],
             'thumbnail' => [Rule::requiredIf($request->isMethod('post')), 'image'],
             'category_id' => ['required', 'integer', 'exists:categories,id'],
+            'matiere_id' => ['required', 'integer', 'exists:matieres,id'],
             'tag_ids' => ['array', 'exists:tags,id'],
         ];
     }

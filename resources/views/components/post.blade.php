@@ -4,14 +4,22 @@
         <img src="{{ str_starts_with($post->thumbnail, 'http') ? $post->thumbnail : asset('storage/' . $post->thumbnail) }}" alt="Miniature" class="border-b border-black w-full max-h-72 object-cover">
     </a>
 
+    @if ($post->matiere)
+        {{-- <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}"> --}}
+            <p class="ml-2 px-1 inline-block bg-black text-white text-sm">{{ $post->matiere->name }}</p>
+        {{-- </a> --}}
+    @endif
+
     @if ($post->category)
-        <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}">
+        {{-- <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}"> --}}
             <p class="ml-2 px-1 inline-block bg-black text-white text-sm">{{ $post->category->name }}</p>
-        </a>
+        {{-- </a> --}}
     @endif
 
     <div class="p-2">
-        <h5 class="text-lg font-medium tracking-tight text-gray-900">{{ $post->title }}</h5>
+        <a href="{{ route('posts.show', ['post' => $post]) }}">
+            <h5 class="text-lg font-medium tracking-tight text-gray-900">{{ $post->title }}</h5>
+        </a>
 
         {{-- <p class="mb-3 text-sm tracking-tight text-gray-700">{{ $post->excerpt }}</p>
 

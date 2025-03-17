@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
+use App\Models\Matiere;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\RedirectResponse;
@@ -44,6 +45,7 @@ class PostsController extends Controller
     {
         return view('admin.posts.form', [
             'post' => $post,
+            'matieres' => Matiere::orderBy('name')->get(),
             'categories' => Category::orderBy('name')->get(),
             'tags' => Tag::orderBy('name')->get(),
         ]);

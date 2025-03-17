@@ -1,4 +1,18 @@
 <x-default-layout :title="$post->title">
+    @section('keywords')
+        @foreach ($post->tags as $tag)
+            {{ $tag->name }},
+        @endforeach
+    @endsection
+
+    @section('description')
+        {{ $post->title }}
+    @endsection
+
+    @section('metaImage')
+        {{ asset('storage/' . $post->thumbnail) }}
+    @endsection
+
     <!-- Post Detail -->
     <div class="bg-gray-200 py-5 px-5 md:px-12 lg:px-28">
 
@@ -65,7 +79,7 @@
         <div class="space-y-8">
             @foreach ($post->comments as $comment)
                 <div class="flex bg-slate-50 p-6 rounded-lg">
-                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full" src="{{ asset('images/logo-e-petit.svg') }}" alt="Image de profil de {{ $comment->user->name }}">
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full" src="{{ Gravatar::get($comment->user->email) }}" alt="Image de profil de {{ $comment->user->name }}">
 
                     <div class="ml-4 flex flex-col">
                         <div class="flex flex-col sm:flex-row sm:items-center">

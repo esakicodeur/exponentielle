@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Matiere;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
@@ -17,12 +18,16 @@ class PostSeeder extends Seeder
     public function run(): void
     {
         $categories = Category::all();
+        $matieres = Matiere::all();
         $tags = Tag::all();
         $users = User::all();
 
         Post::factory(20)
             ->sequence(fn () => [
                 'category_id' => $categories->random(),
+            ])
+            ->sequence(fn () => [
+                'matiere_id' => $matieres->random(),
             ])
             ->hasComments(5, fn () => ['user_id' => $users->random()])
             ->create()

@@ -17,6 +17,7 @@ class Post extends Model
 
     protected $with = [
         'category',
+        'matiere',
         'tags',
     ];
 
@@ -33,6 +34,11 @@ class Post extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function matiere(): BelongsTo
+    {
+        return $this->belongsTo(Matiere::class);
     }
 
     public function tags(): BelongsToMany
