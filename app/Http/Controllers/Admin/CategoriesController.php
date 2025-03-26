@@ -67,7 +67,7 @@ class CategoriesController extends Controller
     {
         $category = Category::updateOrCreate(['id' => $category?->id], $data);
 
-        return redirect()->route('admin.categories.index')->withStatus($category->wasRecentlyCreated ? 'category publie !' : 'category mis a jour !');
+        return redirect()->route('admin.categories.index')->withStatus($category->wasRecentlyCreated ? 'Categorie publiée !' : 'Categorie mis à jour !');
     }
 
     /**
@@ -77,6 +77,6 @@ class CategoriesController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('admin.categories.index')->withStatus('categorie supprimee !');
+        return redirect()->route('admin.categories.index')->withStatus('Categorie supprimée !');
     }
 }

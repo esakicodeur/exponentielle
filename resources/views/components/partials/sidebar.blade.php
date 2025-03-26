@@ -36,6 +36,11 @@
                     <p>Tags</p>
                 </div>
             </a>
+            <a href="{{ route('admin.matieres.index') }}">
+                <div class="mt-5 {{ set_active_route('admin.matieres.index') }} flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
+                    <p>Matières</p>
+                </div>
+            </a>
             <a href="{{ route('admin.users.index') }}">
                 <div class="mt-5 {{ set_active_route('admin.users.index') }} flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]">
                     <p>Utilisateurs</p>

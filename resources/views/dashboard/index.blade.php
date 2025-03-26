@@ -37,6 +37,13 @@
                         <div class="text-sm font-medium text-gray-400">Tags</div>
                     </div>
                 </div>
+
+                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[4px] border-[#e9f08f] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
+                    <div>
+                        <div class="text-2xl font-semibold mb-1">{{ $matieres->count() }}</div>
+                        <div class="text-sm font-medium text-gray-400">Matières</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

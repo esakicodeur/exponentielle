@@ -81,7 +81,7 @@ class PostsController extends Controller
         $post = Post::updateOrCreate(['id' => $post?->id], $data);
         $post->tags()->sync($data['tag_ids'] ?? null);
 
-        return redirect()->route('posts.show', ['post' => $post])->withStatus($post->wasRecentlyCreated ? 'Post publie !' : 'Post mis a jour !');
+        return redirect()->route('posts.show', ['post' => $post])->withStatus($post->wasRecentlyCreated ? 'Post publié !' : 'Post mis à jour !');
     }
 
     /**
@@ -92,6 +92,6 @@ class PostsController extends Controller
         Storage::delete($post->thumbnail);
         $post->delete();
 
-        return redirect()->route('admin.posts.index')->withStatus('Post supprime !');
+        return redirect()->route('admin.posts.index')->withStatus('Post supprimé !');
     }
 }

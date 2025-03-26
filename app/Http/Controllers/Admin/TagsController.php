@@ -66,7 +66,7 @@ class TagsController extends Controller
     {
         $tag = Tag::updateOrCreate(['id' => $tag?->id], $data);
 
-        return redirect()->route('admin.tags.index')->withStatus($tag->wasRecentlyCreated ? 'tag publie !' : 'tag mis a jour !');
+        return redirect()->route('admin.tags.index')->withStatus($tag->wasRecentlyCreated ? 'tag publié !' : 'tag mis à jour !');
     }
 
     /**
@@ -76,6 +76,6 @@ class TagsController extends Controller
     {
         $tag->delete();
 
-        return redirect()->route('admin.tags.index')->withStatus('tag supprime !');
+        return redirect()->route('admin.tags.index')->withStatus('tag supprimé !');
     }
 }

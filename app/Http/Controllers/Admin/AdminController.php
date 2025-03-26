@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Matiere;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
@@ -18,6 +19,7 @@ class AdminController extends Controller
             'categories' => Category::all(),
             'tags' => Tag::all(),
             'users' => User::all(),
+            'matieres' => Matiere::all(),
         ]);
     }
 }

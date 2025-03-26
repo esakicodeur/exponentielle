@@ -49,7 +49,7 @@ class PostImageController extends Controller
 
         PostImage::insert($imageData);
 
-        return redirect()->route('admin.posts.index')->withStatus('Images uploadees !');
+        return redirect()->route('admin.posts.index')->withStatus('Images uploadées !');
     }
 
     public function destroy(int $postImageId)
@@ -62,6 +62,6 @@ class PostImageController extends Controller
 
         $postImage->delete();
 
-        return redirect()->route('admin.posts.index')->withStatus('Image supprimee !');
+        return redirect()->route('admin.posts.index')->withStatus('Image supprimée !');
     }
 }

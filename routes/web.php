@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\MatieresController;
 use App\Http\Controllers\Admin\PostImageController;
 use App\Http\Controllers\Admin\TagsController;
 use App\Http\Controllers\Admin\UsersController;
@@ -44,6 +45,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'as' => 'admin.'],
 
     // Categories
     Route::resource('/categories', CategoriesController::class)->except('show')->names('categories');
+
+    // Matieres
+    Route::resource('/matieres', MatieresController::class)->except('show')->names('matieres');
 
     // Tags
     Route::resource('/tags', TagsController::class)->except('show')->names('tags');
