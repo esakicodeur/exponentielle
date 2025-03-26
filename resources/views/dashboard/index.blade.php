@@ -1,4 +1,4 @@
-<x-default-layout title="Gestion des posts">
+<x-default-layout title="Tableau de bord">
     <div class="flex">
 
         <x-partials.sidebar />
@@ -10,35 +10,35 @@
             </div>
 
             <div class="grid grid-cols-4 gap-[30px] mt-[25px] pb-[15px] px-[10px]">
-                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
+                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[10px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out shadow-[-5px_5px_0px_#000000]">
                     <div>
                         <div class="text-2xl font-semibold mb-1">{{ $users->count() }}</div>
                         <div class="text-sm font-medium text-gray-400">Utilisateurs</div>
                     </div>
                 </div>
 
-                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[4px] border-[#f0c38f] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
+                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[10px] border-[#f0c38f] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out shadow-[-5px_5px_0px_#000000]">
                     <div>
                         <div class="text-2xl font-semibold mb-1">{{ $posts->count() }}</div>
                         <div class="text-sm font-medium text-gray-400">Posts</div>
                     </div>
                 </div>
 
-                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[4px] border-[#f08faf] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
+                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[10px] border-[#f08faf] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out shadow-[-5px_5px_0px_#000000]">
                     <div>
                         <div class="text-2xl font-semibold mb-1">{{ $categories->count() }}</div>
                         <div class="text-sm font-medium text-gray-400">Catégories</div>
                     </div>
                 </div>
 
-                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[4px] border-[#e9f08f] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
+                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[10px] border-[#e9f08f] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out shadow-[-5px_5px_0px_#000000]">
                     <div>
                         <div class="text-2xl font-semibold mb-1">{{ $tags->count() }}</div>
                         <div class="text-sm font-medium text-gray-400">Tags</div>
                     </div>
                 </div>
 
-                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[4px] border-[#e9f08f] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
+                <div class="h-[100px] rounded-[8px] bg-slate-100 border-l-[10px] border-[#e9f08f] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out shadow-[-5px_5px_0px_#000000]">
                     <div>
                         <div class="text-2xl font-semibold mb-1">{{ $matieres->count() }}</div>
                         <div class="text-sm font-medium text-gray-400">Matières</div>

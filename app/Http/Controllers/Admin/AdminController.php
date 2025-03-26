@@ -9,10 +9,11 @@ use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         return view('dashboard.index', [
             'posts' => Post::all(),

@@ -35,7 +35,7 @@ Route::post('/{post}/comment', [PostController::class, 'comment'])->middleware('
 // Administration
 Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     // Dashboard
-    Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
     // Posts
     Route::resource('/posts', PostsController::class)->except('show')->names('posts');
