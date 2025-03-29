@@ -33,9 +33,15 @@
         @endforeach
 
         <div class="flex flex-col items-start mt-5 space-y-5 lg:w-7/12 lg:mt-0 lg:ml-12 mb-5">
+
+            <div class="flex items-center mr-2 space-x-2 mt-3">
+                <span class="text-sm text-gray-500">{{ views($post)->count() }}</span>
+                <x-heroicon-o-eye class="w-5 h-5 text-blue-600" />
+            </div>
+
             @if ($post->category)
                 <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}">
-                    <p class="mt-5 px-3 py-1 bg-black text-white text-sm">{{ $post->category->name }}</p>
+                    <p class="px-3 py-1 bg-black text-white text-sm">{{ $post->category->name }}</p>
                 </a>
             @endif
 

@@ -54,6 +54,12 @@ class PostController extends Controller
 
     public function show(Post $post): View
     {
+        $expireAt = now()->addHours(12);
+
+        views($post)
+            ->cooldown($expireAt)
+            ->record();
+
         $postImages = PostImage::where('post_id', $post->id)->get();
 
         return view('posts.show', [

@@ -4,17 +4,25 @@
         <img src="{{ str_starts_with($post->thumbnail, 'http') ? $post->thumbnail : asset('storage/' . $post->thumbnail) }}" alt="Miniature" class="border-b border-black w-full max-h-72 object-cover">
     </a>
 
-    @if ($post->matiere)
-        {{-- <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}"> --}}
-            <p class="ml-2 px-1 inline-block bg-black text-white text-sm">{{ $post->matiere->name }}</p>
-        {{-- </a> --}}
-    @endif
+    <div class="flex justify-between items-center pt-2">
+        <div class="flex items-center">
+            @if ($post->matiere)
+                {{-- <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}"> --}}
+                    <p class="ml-2 px-1 inline-block bg-black text-white text-sm">{{ $post->matiere->name }}</p>
+                {{-- </a> --}}
+            @endif
 
-    @if ($post->category)
-        {{-- <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}"> --}}
-            <p class="ml-2 px-1 inline-block bg-black text-white text-sm">{{ $post->category->name }}</p>
-        {{-- </a> --}}
-    @endif
+            @if ($post->category)
+                {{-- <a href="{{ route('posts.byCategory', ['category' => $post->category]) }}"> --}}
+                    <p class="ml-2 px-1 inline-block bg-black text-white text-sm">{{ $post->category->name }}</p>
+                {{-- </a> --}}
+            @endif
+        </div>
+        <div class="flex items-center mr-2 space-x-2">
+            <span class="text-sm text-gray-500">{{ views($post)->count() }}</span>
+            <x-heroicon-o-eye class="w-5 h-5 text-blue-600" />
+        </div>
+    </div>
 
     <div class="p-2">
         <a href="{{ route('posts.show', ['post' => $post]) }}">
